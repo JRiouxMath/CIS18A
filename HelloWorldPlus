@@ -1,0 +1,22 @@
+/*
+Jeanine Rioux
+8/30/2017   CSC 18A
+First Program: Hello World
+Added a little decision logic notation practice
+ */
+package helloworld;
+
+public class HelloWorld 
+{
+
+    public static void main(String[] args) 
+    {
+       System.out.println("Hello World");
+       
+       int x,y, z=5;
+       x = 1;
+       y = x<0 ? ++z: --z;
+       System.out.println("y = " + y + "\nz = " + z);
+    }
+    
+}
