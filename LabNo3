@@ -1,0 +1,44 @@
+/**
+ * Jeanine Rioux
+ *  CSC 18a 9/20/2017
+ * Approximate Pi by using the series 4+ 4/3 - 4/5 + 4/7 - 4/9
+ */
+package approachpi;
+
+public class ApproachPi 
+{
+
+    public static void main(String[] args)
+    {
+        int MAXTERMS = 300000, first_term_314159=0;
+        double myPi = 0.0;
+        boolean check=false;
+        
+        for (int i = 0; i <= MAXTERMS; i++)
+        {
+            
+                if ( i%2 == 0)
+                {
+                    myPi += 4.0/(2*i + 1);
+                } // End inner if
+                else
+                {
+                    myPi -= 4.0/(2*i +1);
+                }// End inner else
+
+                System.out.print (myPi + "\t");
+             
+            if (i%200 == 0)
+                System.out.println();
+            
+            if ((myPi>3.141589 && myPi<3.141560) && (!check))
+            {  
+                first_term_314159=i;
+                check=true;
+            }
+        } // End for loop
+        System.out.printf("First term of 3.14159 is %d\n",first_term_314159);
+        
+    } // End method main
+    
+} // End class ApproachPi
