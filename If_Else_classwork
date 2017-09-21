@@ -1,0 +1,47 @@
+/**
+ * Jeanine Rioux
+ * CSC 18A    9/20/17
+ * includes new shortcut for System.out.println
+ */
+package if_else;
+
+import java.io.PrintStream;
+import java.util.Scanner;
+
+
+public class If_Else 
+{
+
+    public static void main(String[] args) 
+    {
+        PrintStream o = System.out;
+        Scanner kb = new Scanner (System.in);
+        
+        o.print("Enter an integer between 1 and 100:");
+        
+        
+        boolean isInt = kb.hasNextInt();
+        
+        
+        if (isInt == true)
+        {
+            int value = kb.nextInt();
+            boolean expr = ( value >= 1) && (value <=100);
+
+            if (expr == true) 
+            {
+                o.println("You entered a valid number.");
+
+            }// End inner if
+            else
+            {
+                o.println("Uh oh.  That's not a valid number!");
+            } // End inner else
+        } // End outer if
+        else
+        {
+            o.println("Uh Oh! you did not enter an integer value:");
+        } // End outer else
+    } //End method main
+    
+}
