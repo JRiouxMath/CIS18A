@@ -1,0 +1,26 @@
+/**
+ * Jeanine Rioux
+ * CSC 18a 9/27/17
+ * 
+ */
+package maxdemo;
+
+public class MaxDemo {
+
+   
+    public static void main(String[] args) {
+       Double a = 3.4, b = 2.1;
+       System.out.printf("max (%.2f, %.2f) = %.2f\n", a,b, max(a,b));
+        
+       Double aa = 3.4, bb = 3.4;
+       System.out.printf("max (%.2f, %.2f) = %.2f\n", aa,bb, max(aa,bb));   
+        
+       Double aaa = 3.4, bbb = 3.400001;
+       System.out.printf("max (%f, %f) = %f\n", aaa,bbb, max(aaa,bbb));
+    }// End Method main
+    
+    public static double max( double x, double y)
+    {
+        return x>y ?x:y;
+    } // End method max
+}// End class MaxDemo
