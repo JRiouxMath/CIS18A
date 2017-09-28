@@ -31,7 +31,7 @@ public class ApproachPi
             if (i%200 == 0)
                 System.out.println();
             
-            if ((myPi>3.141589 && myPi<3.141560) && (!check))
+            if ((myPi * 10000 >314158.9 && myPi<314159.1) && (!check))
             {  
                 first_term_314159=i;
                 check=true;
