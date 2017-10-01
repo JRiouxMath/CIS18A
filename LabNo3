@@ -2,6 +2,7 @@
  * Jeanine Rioux
  *  CSC 18a 9/20/2017
  * Approximate Pi by using the series 4+ 4/3 - 4/5 + 4/7 - 4/9
+ * Then, determine the first term in which 3.14159 appears.
  */
 package approachpi;
 
@@ -10,8 +11,9 @@ public class ApproachPi
 
     public static void main(String[] args)
     {
-        int MAXTERMS = 300000, first_term_314159=0;
+        int MAXTERMS = 200000, first_term_314159=0;
         double myPi = 0.0;
+        double checkPi = 0.0;
         boolean check=false;
         
         for (int i = 0; i <= MAXTERMS; i++)
@@ -30,8 +32,9 @@ public class ApproachPi
              
             if (i%200 == 0)
                 System.out.println();
+            checkPi = (myPi *100000)%314159;
             
-            if ((myPi * 10000 >314158.9 && myPi<314159.1) && (!check))
+            if ((checkPi > 0 && checkPi<1) && (!check))
             {  
                 first_term_314159=i;
                 check=true;
@@ -42,3 +45,5 @@ public class ApproachPi
     } // End method main
     
 } // End class ApproachPi
+
+  
