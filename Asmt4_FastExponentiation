@@ -1,13 +1,4 @@
-public static void main (String[], args)
-{
-  double a;
-  int b;
-  fastExp(a, b);
-  {  if (b = 0)
-    {
-      result = 1;
-    }//End if b = 0
-    if (b = 1)/*
+/*
  * Jeanine Rioux
 * CSC 184 Oct 2, 2017
 * Provide a method (function) named fastExponent( base, exponent ) that
@@ -66,20 +57,3 @@ public class FastExponentiation
     
 }// End class Fast Exponentiation
 
-
-    {
-      result = a;
-    }// End if b = 1
-    while (b>=0)
-    {
-      if (b%2 = 1)
-       {
-          result *=a;
-       }// End if  
-          b/=2;
-          a*=a;
-     
-    } // End while
-  }// End fastExp  
-} // End method main  
-     
