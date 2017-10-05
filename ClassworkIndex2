@@ -1,0 +1,49 @@
+/*
+ * Jeanine Rioux
+* CSC 18a 10/4/17.
+ */
+
+
+package cwindex2;
+
+import java.util.Scanner;
+
+public class CWIndex2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Plese enter text to be searched");
+        String text = scanner.nextLine().toLowerCase();
+        
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        int last = -1;
+        
+        int count[] = new int[26];
+        
+        //count occurences of each letter
+        for(int j = 0; j < alphabet.length(); j++)
+        {
+            int current = text.indexOf(alphabet.charAt(j), last);
+            
+            while (current != -1)
+            {
+                last = current;
+                count[j]++;
+                current = text.indexOf(alphabet.charAt(j), last +1); 
+            }// End while
+            
+            last = -1;
+            }// end loop for counting occurences 
+            System.out.println("\nletter\tcount");
+            for (int y = 0; y<26; y++)
+            {
+                System.out.printf("%s: \t %s \n ", alphabet.charAt(y),count[y]);
+                
+            }// end for to print
+        
+       
+        
+        
+    }// end method main
+    
+}// end class CWIndex2
