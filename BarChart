@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ *Source code from Prof Conrad
+ 
+ */
+package barchart;
+
+public class BarChart 
+{
+   public static void main(String[] args)
+   {
+      int[] array = {1, 1, 0, 0, 3, 0, 1, 8, 7, 2, 1};
+
+      System.out.println("Grade distribution:"); 
+
+      // for each array element, output a bar of the chart
+      for (int counter = 0; counter < array.length; counter++) 
+      {
+         // output bar label ("00-09: ", ..., "90-99: ", "100: ")
+         if (counter == 10)
+            System.out.printf("%5d: ", 100); //Start with 100 which is not a range
+         else
+            System.out.printf("%02d-%02d: ", 
+               counter * 10, counter * 10 + 9); //Produce 9point range
+ 
+         // print bar of asterisks
+         for (int stars = 0; stars < array[counter]; stars++)
+            System.out.print("*");
+
+         System.out.println(); 
+      } 
+   } 
+} // end class BarChart
