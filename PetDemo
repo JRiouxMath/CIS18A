@@ -1,0 +1,38 @@
+/*
+ * Jeanine Rioux
+ * CSC 18A   10/18/2017
+ * This class serves as the driver
+ */
+package petz;
+
+/**
+ *
+ * @author rcc
+ */
+public class Petz {
+
+    
+    public static void main(String[] args) {
+        
+        Pet dog = new Pet();
+        dog.name = "Nutmeg";
+        dog.setAge(3);
+        dog.setWeight(25);
+        
+        System.out.println(dog.toString());
+        /** these worked until attributes in class Pet were made private
+        dog.age = -3;
+        dog.weight = -25;
+        
+        System.out.printf("Name= %s, Age=%d, weight %f\n", dog.name, dog.age, dog.weight);
+        * */
+        
+        dog.setAge(-3);
+        dog.setWeight(-25);
+        
+        System.out.printf("Name= %s, Age=%d, weight %.2f\n", dog.name, dog.getAge(), dog.getWeight());
+        
+        
+    }// end method main
+    
+}// end class Petz
