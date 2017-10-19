@@ -36,3 +36,51 @@ public class Petz {
     }// end method main
     
 }// end class Petz
+
+/*
+ * This is the class with which to create objects
+ */
+package petz;
+
+public class Pet {
+    
+    // Instance variables - attributes
+    public String name;
+    private double weight;
+    private int age;
+    
+    // getters and setters
+    
+    public double getWeight()
+    {
+        return weight;
+    }// end method getWeight
+    
+    public int getAge()
+    {
+        return age;
+    }// end method getAge
+    
+    public void setWeight(double newWeight)
+    {
+        if( newWeight >= 0)
+        {weight = newWeight;}
+        else
+        {System.err.printf("Cannot have weight of %.2f\n", newWeight);}
+    }//end method setWeight
+    
+     public void setAge(int newAge)
+    {
+        if( newAge >= 0)
+        {age = newAge;}
+        else
+        {System.err.printf("Cannot have age of %d\n", newAge);}
+    }//end method setAge
+    
+    public String toString()
+    {
+        return "Name: " + name + "\n Age: " + age + " months\n Weight: " + weight;
+    }// end method toString
+    
+}// end class Pet
+
