@@ -1,0 +1,350 @@
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class FractionsJUnitTest {
+    
+    public FractionsJUnitTest() {
+        System.out.println("Starting FractionsJUnitTest ...");
+    }
+
+    @Test
+    // test the add method
+    public void test1Add()
+    {
+        System.out.println("Testing add #1  ");
+        Fractions a = new Fractions(1,4);        //a = 1/4
+        Fractions b = new Fractions(1,2);        //b = 1/2
+        Fractions expected = new Fractions(3,4); // expected = 3/4
+        Fractions actual = a.add(b);             // actual = a + b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test1Add
+    
+     @Test
+     public void test2Add()
+    {
+        System.out.println("Testing add #2  ");
+        Fractions a = new Fractions(1,10);          //a = 1/10
+        Fractions b = new Fractions(2,5);           //b = 2/5
+        Fractions expected = new Fractions(1,2);    // expected = 1/2
+        Fractions actual = a.add(b);                // actual = a + b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test2Add
+     
+      @Test
+      public void test3Add()
+    {
+        System.out.println("Testing add #3  ");
+        Fractions a = new Fractions (1,3);          //a = 1/3
+        Fractions b = new Fractions(1,6);           //b = 1/6
+        Fractions expected = new Fractions(1,2);    // expected = 1/2
+        Fractions actual = a.add(b);                // actual = a + b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test3Add
+      
+       @Test
+       public void test4Add()
+    {
+        System.out.println("Testing add #4  ");
+        Fractions a = new Fractions(11,13);         //a = 11/13
+        Fractions b = new Fractions(0,1);           //b = 0/1
+        Fractions expected = new Fractions(11,13);  // expected = 11/13
+        Fractions actual = a.add(b);                // actual = a + b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test4Add
+      
+        @Test
+        public void test5Add()
+    {
+        System.out.println("Testing add #5  ");
+        Fractions a = new Fractions(8,9);           //a = 8/9
+        Fractions b = new Fractions(-16,18);        //b = -16/18
+        Fractions expected = new Fractions(0,9);    // expected = 0/9
+        Fractions actual = a.add(b);                // actual = a + b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test5Add
+    
+    
+    @Test
+    // test the subtract method
+    public void test1Subtract()
+    {
+        System.out.println("Testing Subtract #1  ");
+        Fractions a = new Fractions(3,4);            //a = 3/4
+        Fractions b = new Fractions(1,2);            //b = 1/2
+        Fractions expected = new Fractions(1,4);     // expected = 1/4
+        Fractions actual = a.subtract(b);            // actual = a - b
+        
+        assertEquals(actual.equals(expected), true);
+    }// end method test1subtract
+    
+     @Test
+     public void test2Subtract()
+    {
+        System.out.println("Testing subtract #2  ");
+        Fractions a = new Fractions(1,10);          //a = 1/10
+        Fractions b = new Fractions(2,5);           //b = 2/5
+        Fractions expected = new Fractions(-3,10);  // expected = -3/10
+        Fractions actual = a.subtract(b);           // actual = a - b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test2Subtract
+     
+      @Test
+      public void test3Subtract()
+    {
+        System.out.println("Testing subtract #3  ");
+        Fractions a = new Fractions (1,3);          //a = 1/3
+        Fractions b = new Fractions(1,6);           //b = 1/6
+        Fractions expected = new Fractions(1,6);    // expected = 1/6
+        Fractions actual = a.subtract(b);           // actual = a - b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test3Subtract
+      
+       @Test
+       public void test4Subtract()
+    {
+        System.out.println("Testing subtract #4  ");
+        Fractions a = new Fractions(11,13);         //a = 11/13
+        Fractions b = new Fractions(0,1);           //b = 0/1
+        Fractions expected = new Fractions(11,13);  // expected = 11/13
+        Fractions actual = a.subtract(b);           // actual = a - b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test4Subtract
+       
+        @Test
+        public void test5Subtract()
+    {
+        System.out.println("Testing subtract #5  ");
+        Fractions a = new Fractions(8,9);           //a = 8/9
+        Fractions b = new Fractions(-16,18);        //b = -16/18
+        Fractions expected = new Fractions(16,9);   // expected = 16/9
+        Fractions actual = a.subtract(b);           // actual = a - b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test5Subtract
+    
+    @Test
+    // test the multiply method
+    public void test1Multiply()
+    {
+        System.out.println("Testing multiply #1  ");
+        Fractions a = new Fractions(3,4);            //a = 3/4
+        Fractions b = new Fractions(1,2);            //b = 1/2
+        Fractions expected = new Fractions(3,8);     // expected = 3/8
+        Fractions actual = a.multiply(b);            // actual = a * b
+        
+        assertEquals(actual.equals(expected), true);
+    }// end method test1multiply
+    
+     @Test
+     public void test2Multiply()
+    {
+        System.out.println("Testing multiply #2  ");
+        Fractions a = new Fractions(1,10);          //a = 1/10
+        Fractions b = new Fractions(2,5);           //b = 2/5
+        Fractions expected = new Fractions(1,25);   // expected = 1/25
+        Fractions actual = a.multiply(b);           // actual = a * b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test2Multiply
+     
+      @Test
+      public void test3Multiply()
+    {
+        System.out.println("Testing multiply #3  ");
+        Fractions a = new Fractions (1,3);          //a = 1/3
+        Fractions b = new Fractions(1,6);           //b = 1/6
+        Fractions expected = new Fractions(1,18);   // expected = 1/18
+        Fractions actual = a.multiply(b);           // actual = a * b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test3Multiply
+      
+       @Test
+       public void test4Multiply()
+    {
+        System.out.println("Testing multiply #4  ");
+        Fractions a = new Fractions(11,13);         //a = 11/13
+        Fractions b = new Fractions(0,1);           //b = 0/1
+        Fractions expected = new Fractions(0,13);   // expected = 0/13
+        Fractions actual = a.multiply(b);           // actual = a * b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test4Multiply
+      
+        @Test
+        public void test5Multiply()
+    {
+        System.out.println("Testing multiply #5  ");
+        Fractions a = new Fractions(8,9);           //a = 8/9
+        Fractions b = new Fractions(-16,18);        //b = -16/18
+        Fractions expected = new Fractions(-64,81); // expected = -64/81
+        Fractions actual = a.multiply(b);           // actual = a * b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test5Multiply
+    
+    @Test
+    // test the divide method
+    public void test1Divide()
+    {
+        System.out.println("Testing divide #1  ");
+        Fractions a = new Fractions(3,4);           //a = 3/4
+        Fractions b = new Fractions(1,2);           //b = 1/2
+        Fractions expected = new Fractions(3,2);    // expected = 3/2
+        Fractions actual = a.divide(b);             // actual = a / b
+        
+        assertEquals(actual.equals(expected), true);
+        
+    } // end method test1Divide
+     @Test
+     public void test2Divide()
+    {
+        System.out.println("Testing divide #2  ");
+        Fractions a = new Fractions(1,10);          //a = 1/10
+        Fractions b = new Fractions(2,5);           //b = 2/5
+        Fractions expected = new Fractions(1,4);    // expected = 1/4
+        Fractions actual = a.divide(b);             // actual = a / b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test2Divide
+      @Test
+      public void test3Divide()
+    {
+        System.out.println("Testing divide #3  ");
+        Fractions a = new Fractions (1,3);          //a = 1/3
+        Fractions b = new Fractions(1,6);           //b = 1/6
+        Fractions expected = new Fractions(2,1);    // expected = 2/1
+        Fractions actual = a.divide(b);             // actual = a / b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test3Divide
+      
+       @Test
+       public void test4Divide()
+    {
+        System.out.println("Testing divide #4  ");
+        Fractions a = new Fractions(11,13);         //a = 11/13
+        Fractions b = new Fractions(0,1);           //b = 0/1
+        Fractions expected = new Fractions(11,0);    // expected = 11/0
+        Fractions actual = a.divide(b);             // actual = a / b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test4Divide
+
+       
+        @Test
+        public void test5Divide()
+    {
+        System.out.println("Testing divide #5  ");
+        Fractions a = new Fractions(8,9);           //a = 8/9
+        Fractions b = new Fractions(-16,18);        //b = -16/18
+        Fractions expected = new Fractions(-1,1);   // expected = -1/1
+        Fractions actual = a.divide(b);             // actual = a / b
+        
+        assertEquals(actual.equals(expected),true);
+    }// End method test5Divide
+    
+    @Test
+    // test the getNumerator method
+    public void testGetNumerator()
+    {
+        System.out.println("Testing getNumerator  ");
+        int expected = 3;
+        Fractions a = new Fractions(expected,4);           //a = 3/4
+        int actual = a.getNumerator();
+        
+        assertEquals(actual,expected);
+    } // end  method testGetNumerator
+    
+    @Test
+    // test the setNumerator method
+    public void testSetNumerator()
+    {
+        System.out.println("Testing setNumerator  ");
+        int expected = 3;
+        Fractions a = new Fractions(1,4);                   //a = 1/4
+        a.setNumerator(expected);                           //changes a to 3/4
+        int actual = a.getNumerator();
+        
+        assertEquals(actual,expected);
+    } // end method testSetNumerator
+
+    @Test
+    // test the getDenominator method
+    public void testGetDenominator()
+    {
+        System.out.println("Testing getDenominator  ");
+        int expected = 3;
+        Fractions a = new Fractions(4, expected);           //a = 3/4
+        int actual = a.getDenominator();
+        
+        assertEquals(actual,expected);
+    } // end method testgetDenominator
+
+    @Test
+    // test the setDenominator method
+    public void testSetDenominator()
+    {
+        System.out.println("Testing setDenominator  ");
+        int expected = 3;
+        Fractions a = new Fractions(1,4);                   //a = 1/4
+        a.setDenominator(expected);                         //change a to 1/3
+        int actual = a.getDenominator();
+        
+        assertEquals(actual,expected);
+    }// end method testSetDenominator
+    
+    @Test
+    // test the getValue method
+    public void test1GetValue()
+    {
+        System.out.println("Testing getValue #1  ");
+        int n = 3, d = 4;
+        Fractions a = new Fractions(n,4);                    //a = 3/4
+        double expected = (double)n/ (double)d;
+        
+        assertEquals(a.getValue(), expected, 0.00000001);
+    }   // end method test1GetValue
+    
+    @Test
+    // test the equals method
+    public void test1Equals()
+    {
+        System.out.println("Testing Equals #1  ");
+        Fractions a = new Fractions(3,4);           //a = 3/4
+        Fractions b = new Fractions(9,12);           //b = 9/12
+        boolean expected = true;
+        boolean actual = a.equals(b);               //actual: a==b ?
+        
+        assertEquals(actual, expected);
+    }    // end method test1Equals
+    
+    @Test
+    // test the toString method
+    public void testToString()
+    {
+        
+    }    
+    
+    @Test
+    // test the protected gcd function
+    public void testGCD()
+    {
+        System.out.println("Testing gcd function...");
+        Fractions inst = new Fractions();
+        
+        int expectedValue = 3;
+        int actualValue = inst.gcd(9, 12);
+        
+        assertEquals(actualValue,expectedValue);
+    }
+}
