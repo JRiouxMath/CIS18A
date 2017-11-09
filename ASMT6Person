@@ -1,0 +1,112 @@
+/*
+ * 
+ */
+package Person;
+
+public class Person {
+    private String lastName;
+    private String firstName;
+    private int age;
+    private double weight; //in pounds
+    private double height; // in inches
+    
+    // constructor
+    public Person(String newLastName, String newFirstName, int newAge, double weight, double height)
+    {
+        lastName = newLastName;
+        firstName = newFirstName;
+        this.setAge(newAge);
+        this.setWeight(weight);
+        this.setHeight(height);
+    }// end constructor
+
+    /**
+     * @return the lastName
+     */
+    public String getLastName() {
+        return lastName;
+    }
+
+    /**
+     * @param lastName the lastName to set
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    /**
+     * @return the firstName
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * @param firstName the firstName to set
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    /**
+     * @return the age
+     */
+    public int getAge() {
+        return age;
+    }// End method getAge
+
+    /**
+     * @param age the age to set
+     */
+    public void setAge(int age) {
+        if (age >= 0)
+            this.age = age;
+         else
+            throw new IllegalArgumentException("Sorry bub, that's an invalid age!");
+    } // End method setAge
+    
+     public double getWeight() {
+        return weight;
+    }// End method getWeight
+
+    /**
+     * @param weight the age to set
+     */
+    public void setWeight(double weight) {
+        if (weight >= 0)
+            this.weight = weight;
+         else 
+            throw new IllegalArgumentException("Nice try, but you weigh more than that.");
+    } // End method setAge
+    
+    
+    /**
+     * @return the height
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    /**
+     * @param height the height to set
+     */
+    public void setHeight(double height) {
+        if (height >= 0)
+            this.height = height;
+        else
+            throw new IllegalArgumentException("I'm sure you aren't that small.");
+    }
+    
+    @Override
+    public String toString()
+    {
+        return lastName + ", " + firstName + ", " + age + " years, " +
+                weight + " pounds, " + getHeight() + " inches";
+        
+    }// End method toString
+
+    
+    
+    
+    
+}
