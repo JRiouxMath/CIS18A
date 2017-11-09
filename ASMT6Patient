@@ -1,0 +1,95 @@
+/*
+ * Jeanine Rioux
+ * CSC 18A  11/8/17
+ * Assignment #6 subclasses and inheritance
+ */
+package Person;
+
+public class Patient extends Person{
+    private int systolic_blood_pressure; // (cannot be less than zero)
+    private int diastolic_blood_pressure; // (cannot be less than zero)
+    private int pulse; // (measured as beats per minute, cannot be less than zero)
+    
+    // Constructors
+   public Patient(String newLastName, String newFirstName, int newAge, double newWeight, double newHeight)
+   {
+       super(newLastName, newFirstName, newAge, newWeight, newHeight);
+       systolic_blood_pressure = 0;
+       diastolic_blood_pressure = 0;
+       pulse = 0;
+       
+   }   // End 3 arg constructor 
+   
+   public Patient (Person newPatient)
+   {
+      super (newPatient.getLastName(), newPatient.getFirstName(), newPatient.getAge(), newPatient.getWeight(), newPatient.getHeight());
+      systolic_blood_pressure = 0;
+      diastolic_blood_pressure = 0;
+      pulse = 0;
+   }// End constructor from Person object
+    
+    // Getters and Setters
+
+    /**
+     * @return the systolic_blood_pressure
+     */
+    public int getSystolic_blood_pressure() {
+        return systolic_blood_pressure;
+    }
+
+    /**
+     * @param systolic_blood_pressure the systolic_blood_pressure to set
+     */
+    public void setSystolic_blood_pressure(int systolic_blood_pressure) {
+        if ( diastolic_blood_pressure >=0 )
+            this.systolic_blood_pressure = systolic_blood_pressure;
+         else
+            throw new IllegalArgumentException("Oops, Systolic is too low.");
+        
+    }
+
+    /**
+     * @return the diastolic_blood_pressure
+     */
+    public int getDiastolic_blood_pressure() {
+        return diastolic_blood_pressure;
+    }
+
+    /**
+     * @param diastolic_blood_pressure the diastolic_blood_pressure to set
+     */
+    public void setDiastolic_blood_pressure(int diastolic_blood_pressure) {
+        if ( diastolic_blood_pressure >=0 )
+            this.diastolic_blood_pressure = diastolic_blood_pressure;
+         else
+            throw new IllegalArgumentException("Oops, Diastolic is too low.");
+    }
+
+    /**
+     * @return the pulse
+     */
+    public int getPulse() {
+        return pulse;
+    }
+
+    /**
+     * @param pulse the pulse to set
+     */
+    public void setPulse(int pulse) {
+        if (pulse >= 0 )
+            this.pulse = pulse;
+        else
+            throw new IllegalArgumentException("Oops, the pulse of a dead man!");
+    }
+    
+    
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", " + systolic_blood_pressure + ", " +
+                    diastolic_blood_pressure + ", " + pulse ;
+    }// end method toString
+    
+    
+    
+}// end subclass Patient
