@@ -1,0 +1,115 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Person;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author rcc
+ */
+public class StudentTest {
+    
+    public StudentTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of getGpa method, of class Student.
+     */
+    @Test
+    public void test1GetGpa() {
+        System.out.println("getGpa1");
+        Student instance = new Student("Doe", "John", 33, 150, 60);
+        double expResult = -1.0;
+        double result = instance.getGpa();
+        assertEquals(expResult, result, 0.0);
+        
+    }
+    
+    @Test
+    public void test2GetGpa() {
+        System.out.println("getGpa2");
+        Person newperson = new Person("Doe", "John", 33, 150, 60);
+        Student instance = new Student(newperson);
+        double expResult = -1.0;
+        double result = instance.getGpa();
+        assertEquals(expResult, result, 0.0);
+        
+    }
+    
+
+    /**
+     * Test of setGpa method, of class Student.
+     */
+    @Test
+    public void testSetGpa() {
+        System.out.println("setGpa");
+        double gpa = 0.0;
+        Student instance = new Student("Doe", "John", 33, 150, 60);
+        instance.setGpa(gpa);
+        
+    }
+
+    
+    /**
+     * Test of getMajor method, of class Student.
+     */
+    @Test
+    public void testGetMajor() {
+        System.out.println("getMajor");
+        Student instance = new Student("Doe", "John", 33, 150, 60);
+        String expResult = "Undeclared";
+        String result = instance.getMajor();
+        assertEquals(expResult, result);
+        
+    }
+
+    /**
+     * Test of setMajor method, of class Student.
+     */
+    @Test
+    public void testSetMajor() {
+        System.out.println("setMajor");
+        String major = "CSC";
+        Student instance = new Student("Doe", "John", 33, 150, 60);
+        instance.setMajor(major);
+        assertEquals(major,instance.getMajor());
+    }
+
+    /**
+     * Test of toString method, of class Student.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        Student instance = new Student("Doe", "John", 33, 150, 60);
+        instance.setGpa(3.5);
+        String expResult = "Doe, John, 33, 150.0 pounds, 60.0 inches, 3.5, Undeclared";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
+}
