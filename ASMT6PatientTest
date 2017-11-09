@@ -1,0 +1,118 @@
+/*
+ * Jeanine Rioux
+ * CSC 18 A 11/8/17
+ * Assignment #6 JUnit Test for new child class Patient
+ */
+package Person;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author rcc
+ */
+public class PatientTest {
+    
+    public PatientTest() {
+    }
+   
+
+    /**
+     * Test of getSystolic_blood_pressure method, of class Patient.
+     */
+    @Test
+    public void testGetSystolic_blood_pressure() {
+        System.out.println("getSystolic_blood_pressure");
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        int expResult = 0;
+        int result = instance.getSystolic_blood_pressure();
+        assertEquals(expResult, result);
+        
+    }
+
+    /**
+     * Test of setSystolic_blood_pressure method, of class Patient.
+     */
+    @Test
+    public void testSetSystolic_blood_pressure() {
+        System.out.println("setSystolic_blood_pressure");
+        int expResult = 110;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setSystolic_blood_pressure(expResult);
+        assertEquals(expResult, instance.getSystolic_blood_pressure() );
+    }
+
+    /**
+     * Test of getDiastolic_blood_pressure method, of class Patient.
+     */
+    @Test
+    public void testGetDiastolic_blood_pressure() {
+        System.out.println("getDiastolic_blood_pressure");
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        int expResult = 0;
+        int result = instance.getDiastolic_blood_pressure();
+        assertEquals(expResult, result);
+        
+    }
+
+    /**
+     * Test of setDiastolic_blood_pressure method, of class Patient.
+     */
+    @Test
+    public void testSetDiastolic_blood_pressure() {
+        System.out.println("setDiastolic_blood_pressure");
+        int diastolic_blood_pressure = 230;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setDiastolic_blood_pressure(diastolic_blood_pressure);
+        assertEquals(diastolic_blood_pressure, instance.getDiastolic_blood_pressure());
+    }
+
+    /**
+     * Test of getPulse method, of class Patient.
+     */
+    @Test
+    public void testGetPulse() {
+        System.out.println("getPulse");
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        int expResult = 0;
+        int result = instance.getPulse();
+        assertEquals(expResult, result);
+        
+    }
+
+    /**
+     * Test of setPulse method, of class Patient.
+     */
+    @Test
+    public void testSetPulse() {
+        System.out.println("setPulse");
+        int pulse = 115;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setPulse(pulse);
+        assertEquals(pulse, instance.getPulse());
+    }
+
+    /**
+     * Test of toString method, of class Patient.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setDiastolic_blood_pressure(150);
+        instance.setSystolic_blood_pressure(110);
+        instance.setPulse(100);
+        
+        String expResult = "Dursely, Dudley, 64 years, 335 pounds, 64 inches, 110, 150, 100";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+}
