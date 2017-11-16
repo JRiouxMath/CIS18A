@@ -46,6 +46,15 @@ public class PatientTest {
         instance.setSystolic_blood_pressure(expResult);
         assertEquals(expResult, instance.getSystolic_blood_pressure() );
     }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetSystolic_blood_pressure() {
+        System.out.println("2setSystolic_blood_pressure");
+        int expResult = -1;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setSystolic_blood_pressure(expResult);
+        assertEquals(expResult, instance.getSystolic_blood_pressure() );
+    }
 
     /**
      * Test of getDiastolic_blood_pressure method, of class Patient.
@@ -67,6 +76,16 @@ public class PatientTest {
     public void testSetDiastolic_blood_pressure() {
         System.out.println("setDiastolic_blood_pressure");
         int diastolic_blood_pressure = 230;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setDiastolic_blood_pressure(diastolic_blood_pressure);
+        assertEquals(diastolic_blood_pressure, instance.getDiastolic_blood_pressure());
+        
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetDiastolic_blood_pressure() {
+        System.out.println("set2Diastolic_blood_pressure");
+        int diastolic_blood_pressure = -1;
         Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
         instance.setDiastolic_blood_pressure(diastolic_blood_pressure);
         assertEquals(diastolic_blood_pressure, instance.getDiastolic_blood_pressure());
