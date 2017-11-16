@@ -115,6 +115,15 @@ public class PatientTest {
         instance.setPulse(pulse);
         assertEquals(pulse, instance.getPulse());
     }
+    
+     @Test (expected = IllegalArgumentException.class)
+    public void test2SetPulse() {
+        System.out.println("2setPulse");
+        int pulse = -1;
+        Patient instance = new Patient ("Dursely", "Dudley", 64, 335.0, 64.0);
+        instance.setPulse(pulse);
+        assertEquals(pulse, instance.getPulse());
+    }
 
     /**
      * Test of toString method, of class Patient.
