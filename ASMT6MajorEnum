@@ -1,0 +1,66 @@
+/*
+ * Jeanine Rioux
+ * CSC 18A 11/8/17
+ * Creating a subclass "Student" from superclass "Person"
+ * 
+ */
+package Person;
+
+
+public class Student extends Person {
+    
+    private double gpa;
+    private Major major;
+    
+    public Student(String newLastName, String newFirstName, int newAge, double newWeight, double newHeight) {
+        super(newLastName, newFirstName, newAge, newWeight, newHeight);
+        gpa = -1;
+        major = Major.UNC;
+    }//  This constructor was auto-created by r/c on hint on line number.
+    
+    public Student (Person newStudent)
+    {
+        super (newStudent.getLastName(), newStudent.getFirstName(), newStudent.getAge(), newStudent.getWeight(), newStudent.getHeight());
+        gpa = -1;  // Didn't use setGpa w/validation.  We want the flag entry.
+        major = Major.UNC;
+    } // End constuctor Student
+
+    /**
+     * @return the gpa
+     */
+    public double getGpa() {
+        return gpa;
+    }
+
+    /**
+     * @param gpa the gpa to set
+     */
+    public void setGpa(double gpa) {
+        if (gpa >= 0.0 && gpa <= 4.0)
+            this.gpa = gpa;
+         else throw new IllegalArgumentException("Whoa! Try that gpa again!");
+    }
+
+    /**
+     * @return the major
+     */
+    public Major getMajor() {
+        return major;
+    }
+
+    /**
+     * @param major the major to set
+     */
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", " + gpa + ", "  + major;
+               
+    }// end method toString
+    
+    
+} // End subclass Student
