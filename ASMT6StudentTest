@@ -18,25 +18,7 @@ import static org.junit.Assert.*;
  */
 public class StudentTest {
     
-    public StudentTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+  
     /**
      * Test of getGpa method, of class Student.
      */
@@ -82,8 +64,8 @@ public class StudentTest {
     public void testGetMajor() {
         System.out.println("getMajor");
         Student instance = new Student("Doe", "John", 33, 150, 60);
-        String expResult = "Undeclared";
-        String result = instance.getMajor();
+        Major expResult = Major.UNC;
+        Major result = instance.getMajor();
         assertEquals(expResult, result);
         
     }
@@ -94,7 +76,7 @@ public class StudentTest {
     @Test
     public void testSetMajor() {
         System.out.println("setMajor");
-        String major = "CSC";
+        Major major = Major.CIS;
         Student instance = new Student("Doe", "John", 33, 150, 60);
         instance.setMajor(major);
         assertEquals(major,instance.getMajor());
@@ -108,7 +90,7 @@ public class StudentTest {
         System.out.println("toString");
         Student instance = new Student("Doe", "John", 33, 150, 60);
         instance.setGpa(3.5);
-        String expResult = "Doe, John, 33, 150.0 pounds, 60.0 inches, 3.5, Undeclared";
+        String expResult = "Doe, John, 33 years, 150.0 pounds, 60.0 inches, 3.5, UNC";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
