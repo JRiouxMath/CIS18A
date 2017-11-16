@@ -108,11 +108,10 @@ public class PatientTest {
         instance.setSystolic_blood_pressure(110);
         instance.setPulse(100);
         
-        String expResult = "Dursely, Dudley, 64 years, 335 pounds, 64 inches, 110, 150, 100";
+        String expResult = "Dursely, Dudley, 64 years, 335.0 pounds, 64.0 inches, 110, 150, 100";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
