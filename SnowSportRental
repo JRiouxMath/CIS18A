@@ -3,7 +3,7 @@
  * Final Project: Abstract class SnowSportRental
  * Fall 2017
  */
-package snowsportrental;
+package snowSportRental;
 
 public abstract class SnowSportRental {
     
@@ -25,9 +25,13 @@ public abstract class SnowSportRental {
         
     }//end constructor
     
-    public boolean equals()
+    public boolean equals(int compRentalNumber)
     {
-        
+        boolean isEqual = false;
+        if (this.rentalNumber == compRentalNumber)
+            isEqual = true;
+            
+        return isEqual;
     }// end method equals
 
     public boolean getNewModel()
