@@ -1,0 +1,83 @@
+/*
+ * Jeanine Rioux  CSC 18A
+ * Final Project: Abstract class SnowSportRental
+ * Fall 2017
+ */
+package snowsportrental;
+
+public abstract class SnowSportRental {
+    
+    private boolean newModel;
+    private double rentalCost;
+    private int rentalNumber;
+    
+    public SnowSportRental(boolean newModel, double rentalCost, int rentalNumber)
+    {
+        if(rentalCost < 0 )
+            throw new IllegalArgumentException("Rental Cost must be positive.");
+        
+        if(rentalNumber < 0 )
+            throw new IllegalArgumentException("Rental Number must be positive.");
+        
+        this.newModel = newModel;
+        this.rentalCost = rentalCost;
+        this.rentalNumber = rentalNumber;
+        
+    }//end constructor
+    
+    public boolean equals()
+    {
+        
+    }// end method equals
+
+    public boolean getNewModel()
+    {
+        return newModel;
+    } // end getter for newModel
+  
+    public void setNewModel(boolean newModel) {
+        this.newModel = newModel;
+    } // end setter for newModel
+
+  
+    public double getRentalCost() {
+        return rentalCost;
+    }// end getter for RentalCost
+
+  
+    public void setRentalCost(double rentalCost) {
+        
+        if(rentalCost < 0 )
+            throw new IllegalArgumentException("Rental Cost must be positive.");
+        
+        this.rentalCost = rentalCost;
+    }// end setter for rentalCost
+
+
+    public int getRentalNumber() {
+        return rentalNumber;
+    } // end getter for rentalNumber
+
+   
+    public void setRentalNumber(int rentalNumber) {
+        
+         if(rentalNumber < 0 )
+            throw new IllegalArgumentException("Rental Number must be positive.");
+         
+        this.rentalNumber = rentalNumber;
+    } // end setter for rentalNumber
+    
+    
+    @Override
+    public String toString()
+    {
+        return String.format("%b, %n, %f", newModel, rentalCost, rentalNumber);
+    } // end method toString
+    
+    
+    
+    
+    //Method to be called in child classes to calculate late charge
+    public abstract double lateCharge();
+    
+} // end abstract class SnowSportRental
