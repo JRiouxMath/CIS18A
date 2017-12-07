@@ -1,0 +1,61 @@
+ /*
+ * Jeanine Rioux CSC 18A
+ * Final Project subclass #3
+ * 12/5/17
+ */
+package snowsportrental;
+
+public class SnowMobileRental extends SnowSportRental {
+    
+    private int capacity;  // seating capacity
+    private String vin;
+    
+    public SnowBoardRental( boolean newModel, double rentalCost, int rentalNumber, int capacity, String vin)
+    {
+        super (newModel, rentalCost, rentalNumber);
+        
+        setCapacity(capacity);
+        setVin(vin);
+                
+    } // end constructor
+    
+    @Override
+    public double lateCharge()
+    {
+        return (20 + (capacity *5))  * super.getRentalCost() ;
+    } // end overridden method lateCharge
+
+    public int getCapacity() {
+        return capacity;
+    } // end capacity getter
+
+
+    public void setCapacity(int capacity) {
+        
+        if (capacity <0)
+            throw new IllegalArgumentException ("Capacity must be positive.");
+        
+        this.capacity = capacity;
+    } // end capacity setter
+    
+    public String getVin()
+    {
+        return vin;
+    }// end vin getter
+    
+    public void setVin(String vin)
+    {
+        this.vin = vin;
+    }// end isFreestyle setter
+    
+    
+    @Override
+    public String toString()
+    {
+      return (super.getRentalNumber() + ", $ " + super.getRentalCost() + ", capacity "+ capacity +
+                "is a new model: " + super.getNewModel() +", Freestyle: " + isFreestyle);
+    } // end toString
+    
+    
+    
+} // end class SnowBoardRental
