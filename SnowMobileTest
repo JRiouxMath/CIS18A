@@ -1,0 +1,118 @@
+/*
+ * Jeanine Rioux CIS18A
+ *  Final Project: Test class #3
+ */
+package snowSportRental;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import snowSportRental.SnowMobileRental;
+
+/**
+ *
+ * @author rcc
+ */
+public class SnowMobileRentalTest {
+    
+    public SnowMobileRentalTest() {
+    }
+    
+   
+
+    /**
+     * Test of lateCharge method, of class SnowMobileRental.
+     */
+    @Test
+    public void testLateCharge() {
+        System.out.println("lateCharge");
+        SnowMobileRental instance = null;
+        double expResult = 0.0;
+        double result = instance.lateCharge();
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCapacity method, of class SnowMobileRental.
+     */
+    @Test
+    public void testGetCapacity() {
+        System.out.println("getCapacity");
+        SnowMobileRental instance = null;
+        int expResult = 0;
+        int result = instance.getCapacity();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setCapacity method, of class SnowMobileRental.
+     */
+    @Test
+    public void test1SetCapacity() {
+        System.out.println("1setCapacity");
+        int capacity = 1;
+        SnowMobileRental instance = new SnowMobileRental (true, 1.2, 234, 1, "a1");
+        instance.setCapacity(capacity);
+        assertEquals(capacity, instance.getCapacity());
+        
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetCapacity() {
+        System.out.println("2setCapacity");
+        int capacity = -1;
+        SnowMobileRental instance = new SnowMobileRental (true, 1.2, 234, -1, "a1");
+        instance.setCapacity(capacity);
+        assertEquals(capacity, instance.getCapacity());
+        
+    }
+
+    /**
+     * Test of getVin method, of class SnowMobileRental.
+     */
+    @Test
+    public void testGetVin() {
+        System.out.println("getVin");
+        SnowMobileRental instance = null;
+        String expResult = "";
+        String result = instance.getVin();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setVin method, of class SnowMobileRental.
+     */
+    @Test
+    public void testSetVin() {
+        System.out.println("setVin");
+        String vin = "";
+        SnowMobileRental instance = null;
+        instance.setVin(vin);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of toString method, of class SnowMobileRental.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        SnowMobileRental instance = null;
+        String expResult = "";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+}
