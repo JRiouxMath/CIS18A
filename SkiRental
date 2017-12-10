@@ -1,83 +1,56 @@
 /*
- * Jeanine Rioux  CSC 18A
- * Final Project: Abstract class SnowSportRental
- * Fall 2017
+ * Jeanine Rioux CSC18A  12/5/17
+ * Final project
+ * Subclass 1 .
  */
 package snowsportrental;
 
-public abstract class SnowSportRental {
+public class SkiRental extends SnowSportRental
+{
+    private int size;  //Given in centimeters
     
-    private boolean newModel;
-    private double rentalCost;
-    private int rentalNumber;
+    public SkiRental(boolean newModel, double rentalCost, int rentalNumber, int size)
+    {
+        super (newModel, rentalCost, rentalNumber);
+        
+        setSize(size);
+                
+    } // end constructor
     
-    public SnowSportRental(boolean newModel, double rentalCost, int rentalNumber)
-    {
-        if(rentalCost < 0 )
-            throw new IllegalArgumentException("Rental Cost must be positive.");
-        
-        if(rentalNumber < 0 )
-            throw new IllegalArgumentException("Rental Number must be positive.");
-        
-        this.newModel = newModel;
-        this.rentalCost = rentalCost;
-        this.rentalNumber = rentalNumber;
-        
-    }//end constructor
     
-    public boolean equals()
+    // Implement Abstract method to calculate late charge at 10%
+ 
+    @Override
+    public double lateCharge ()
     {
-        
-    }// end method equals
+        return super.getRentalCost() * 0.1;
+    }// end method lateCharge
 
-    public boolean getNewModel()
-    {
-        return newModel;
-    } // end getter for newModel
-  
-    public void setNewModel(boolean newModel) {
-        this.newModel = newModel;
-    } // end setter for newModel
-
-  
-    public double getRentalCost() {
-        return rentalCost;
-    }// end getter for RentalCost
-
-  
-    public void setRentalCost(double rentalCost) {
-        
-        if(rentalCost < 0 )
-            throw new IllegalArgumentException("Rental Cost must be positive.");
-        
-        this.rentalCost = rentalCost;
-    }// end setter for rentalCost
-
-
-    public int getRentalNumber() {
-        return rentalNumber;
-    } // end getter for rentalNumber
+    
+    public int getSize() {
+        return size;
+    } // end method getSize
 
    
-    public void setRentalNumber(int rentalNumber) {
+    public void setSize(int size) {
         
-         if(rentalNumber < 0 )
-            throw new IllegalArgumentException("Rental Number must be positive.");
-         
-        this.rentalNumber = rentalNumber;
-    } // end setter for rentalNumber
+        if(size < 0)
+            throw new IllegalArgumentException(
+                       "Size must be positive.");
+        
+        this.size = size;
+    } // end method setSize
     
     
     @Override
     public String toString()
     {
-        return String.format("%b, %n, %f", newModel, rentalCost, rentalNumber);
+        String output =  super.getRentalNumber() + ", $ " + super.getRentalCost() + 
+                ", size "+ size + " is a new model: " + super.getNewModel();
+        
+        return output;
+         
     } // end method toString
     
     
-    
-    
-    //Method to be called in child classes to calculate late charge
-    public abstract double lateCharge();
-    
-} // end abstract class SnowSportRental
+} // end class SkiRental
