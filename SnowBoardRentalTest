@@ -1,0 +1,109 @@
+/*
+ * Jeanine Rioux CSC 18A
+ * Final Project Test Class #2
+ * Snow Board.
+ */
+package snowsportrental;
+
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+
+
+public class SnowBoardRentalTest {
+
+   
+   
+    /**
+     * Test of lateCharge method, of class SnowBoardRental.
+     */
+    @Test
+    public void testLateCharge() {
+        System.out.println("Board lateCharge");
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        double expResult = 0.24;
+        double result = instance.lateCharge();
+        assertEquals(expResult, result, 0.0);
+        
+    } // end testLateCharge
+
+    /**
+     * Test of getSize method, of class SnowBoardRental.
+     */
+    @Test
+    public void testGetSize() {
+        System.out.println("Board getSize");
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        int expResult = 1;
+        int result = instance.getSize();
+        assertEquals(expResult, result);
+       
+    } // end testGetSize
+
+    /**
+     * Test of setSize method, of class SnowBoardRental.
+     */
+    @Test
+    public void testSetSize() {
+        System.out.println("Board setSize");
+        int size = 1;
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        instance.setSize(size);
+        assertEquals(size, instance.getSize());
+    } // end testSetSize
+    
+    /**
+     * Test of setSize method, of class SnowBoardRental.
+     */
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetSize() {
+        System.out.println("Board 2 setSize");
+        int size = -1;
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        instance.setSize(size);
+        assertEquals(size, instance.getSize());
+    } // end test2SetSize
+
+    /**
+     * Test of getIsFreestyle method, of class SnowBoardRental.
+     */
+    @Test
+    public void testGetIsFreestyle() {
+        System.out.println(" Board getIsFreestyle");
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, false);
+        boolean expResult = false;
+        boolean result = instance.getIsFreestyle();
+        assertEquals(expResult, result);
+        
+    }  // end TestGetIsFreestyle
+
+    /**
+     * Test of setIsFreestyle method, of class SnowBoardRental.
+     */
+    @Test
+    public void testSetIsFreestyle() {
+        System.out.println("Board setIsFreestyle");
+        boolean isFreestyle = true;
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        instance.setIsFreestyle(isFreestyle);
+        assertEquals(isFreestyle, instance.getIsFreestyle());
+    } // end testSetIsFreestyle
+    
+    
+
+    /**
+     * Test of toString method, of class SnowBoardRental.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("Board toString");
+        SnowBoardRental instance = new SnowBoardRental (true, 1.2, 234, 1, true);
+        String expResult = "234, $ 1.2, size 1 is a new model: true, Freestyle: true";
+        String result = instance.getRentalNumber() + ", $ " + instance.getRentalCost() + ", size "+ instance.getSize() +
+                " is a new model: " + instance.getNewModel() + ", Freestyle: " + instance.getIsFreestyle();
+        assertEquals(expResult, result);
+        
+    } // end testToString
+    
+}
