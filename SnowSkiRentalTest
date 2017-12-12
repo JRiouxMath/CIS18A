@@ -1,0 +1,196 @@
+/*
+ * Jeanine Rioux CSC 18A 
+ * Final Project Test Class #1: Ski
+ */
+package snowsportrental;
+
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+
+public class SkiRentalTest {
+    
+    public SkiRentalTest() {
+    }
+    
+   
+    /**
+     * Test of lateCharge method, of class SkiRental.
+     */
+    @Test
+    public void testLateCharge() {
+        System.out.println("lateCharge");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        double expResult = 0.12;
+        double result = instance.lateCharge();
+        assertEquals(expResult, result, 0.0);
+        
+    } // end testLateCharge
+    
+    
+     /**
+     * Test of equals method, of class SnowMobileRental.
+     */
+    @Test
+    public void testEquals() {
+        System.out.println("Equals");
+        SnowMobileRental instance = new SnowMobileRental (true, 6.2, 25, 7, "A1");
+        int CompareNumber = 25;
+        assertTrue(instance.equals(CompareNumber));
+       
+    }//end testEquals
+    
+    
+    /**
+     * Test of getSize method, of class SkiRental.
+     */
+    @Test
+    public void testGetNewModel() {
+        System.out.println("get Ski NewModel");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        boolean expResult = true;
+        boolean result = instance.getNewModel();
+        assertEquals(expResult, result);
+        
+    } // end testgetNewModel
+
+    /**
+     * Test of setNewModel method, of class SkiRental.
+     */
+    @Test
+    public void testSetNewModel() {
+        System.out.println("set Ski NewModel");
+        boolean isNew = false;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setNewModel(isNew);
+        assertEquals(isNew, instance.getNewModel());
+        
+    } // end testSetNewModel
+
+    /**
+     * Test of getSize method, of class SkiRental.
+     */
+    @Test
+    public void testGetSize() {
+        System.out.println("get Ski Size");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        int expResult = 10;
+        int result = instance.getSize();
+        assertEquals(expResult, result);
+        
+    } // end testGetSize
+
+    /**
+     * Test of setSize method, of class SkiRental.
+     */
+    @Test
+    public void testSetSize() {
+        System.out.println("set Ski Size");
+        int size = 1;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setSize(size);
+        assertEquals(size, instance.getSize());
+        
+    } // end testSetSize
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetSize() {
+        System.out.println("2set Ski Size");
+        int size = -2;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setSize(size);
+        assertEquals(size, instance.getSize());
+        
+    } // end testSetSize
+    
+    /**
+     * Test of getRentalCost method, of class SkiRental.
+     */
+    @Test
+    public void testGetRentalCost() {
+        System.out.println("get Ski Rental Cost");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        double expResult = 1.2;
+        double result = instance.getRentalCost();
+        assertEquals(expResult, result, 0.0);
+        
+    } // end testgetRentalCost
+
+    /**
+     * Test of setRentalCost method, of class SkiRental.
+     */
+    @Test
+    public void testSetRentalCost() {
+        System.out.println("get Ski RentalCost");
+        double size = 1;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setRentalCost(size);
+        assertEquals(size, instance.getRentalCost(), 0.0);
+        
+    } // end testSetRentalCost
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetRentalCost() {
+        System.out.println("2get Ski RentalCost");
+        double size = -2;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setRentalCost(size);
+        assertEquals(size, instance.getRentalCost(), 0.0);
+        
+    } // end testSetRentalCost
+    
+    /**
+     * Test of getRenalNum method, of class SkiRental.
+     */
+    @Test
+    public void testGetRentalNum() {
+        System.out.println("get Ski rental number");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        int expResult = 234;
+        int result = instance.getRentalNumber();
+        assertEquals(expResult, result);
+        
+    } // end testGetRentalNum
+    
+    
+
+    /**
+     * Test of setRentalNumber method, of class SkiRental.
+     */
+    @Test 
+    public void testSetRentalNumber() {
+        System.out.println("set Ski rental number");
+        int rentalNumber = 234;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setSize(rentalNumber);
+        assertEquals(rentalNumber, instance.getRentalNumber() );
+        
+    } // end testSetSize
+    
+    
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void test2SetRentalNumber() {
+        System.out.println("2 set Ski rental number");
+        int rentalNumber = -1;
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        instance.setSize(rentalNumber);
+        assertEquals(rentalNumber, instance.getRentalNumber() );
+        
+    } // end testSetSize
+
+    /**
+     * Test of toString method, of class SkiRental.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("Ski toString");
+        SkiRental instance = new SkiRental (true, 1.2, 234, 10 );
+        String expResult = "234, $ 1.2, size 10 is a new model: true";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+        
+    }// end testToString
+    
+} // end ski rental test
