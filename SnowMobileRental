@@ -1,4 +1,4 @@
- /*
+/*
  * Jeanine Rioux CSC 18A
  * Final Project subclass #3
  * 12/5/17
@@ -10,7 +10,7 @@ public class SnowMobileRental extends SnowSportRental {
     private int capacity;  // seating capacity
     private String vin;
     
-    public SnowBoardRental( boolean newModel, double rentalCost, int rentalNumber, int capacity, String vin)
+    public SnowMobileRental( boolean newModel, double rentalCost, int rentalNumber, int capacity, String vin)
     {
         super (newModel, rentalCost, rentalNumber);
         
@@ -22,7 +22,7 @@ public class SnowMobileRental extends SnowSportRental {
     @Override
     public double lateCharge()
     {
-        return (20 + (capacity *5))  * super.getRentalCost() ;
+        return ((20 + (capacity *5.0))/100  * getRentalCost() );
     } // end overridden method lateCharge
 
     public int getCapacity() {
@@ -52,8 +52,8 @@ public class SnowMobileRental extends SnowSportRental {
     @Override
     public String toString()
     {
-      return (super.getRentalNumber() + ", $ " + super.getRentalCost() + ", capacity "+ capacity +
-                "is a new model: " + super.getNewModel() +", Freestyle: " + isFreestyle);
+      return (getRentalNumber() + ", $ " + getRentalCost() + ", capacity "+ capacity +
+                " is a new model: " + getNewModel() +", vin: " + vin);
     } // end toString
     
     
