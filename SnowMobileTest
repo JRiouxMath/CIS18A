@@ -2,15 +2,12 @@
  * Jeanine Rioux CIS18A
  *  Final Project: Test class #3
  */
-package snowSportRental;
+package snowsportrental;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
-import snowSportRental.SnowMobileRental;
+//import snowsportrental.SnowMobileRental;
 
 /**
  *
@@ -29,13 +26,13 @@ public class SnowMobileRentalTest {
     @Test
     public void testLateCharge() {
         System.out.println("lateCharge");
-        SnowMobileRental instance = null;
-        double expResult = 0.0;
+        SnowMobileRental instance = new SnowMobileRental (true, 6.2, 25, 7, "A1");
+        double expResult = 3.410;
         double result = instance.lateCharge();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        assertEquals(expResult, result, 0.1);
+       
+    }//end testLateCharge
+    
 
     /**
      * Test of getCapacity method, of class SnowMobileRental.
@@ -43,13 +40,12 @@ public class SnowMobileRentalTest {
     @Test
     public void testGetCapacity() {
         System.out.println("getCapacity");
-        SnowMobileRental instance = null;
-        int expResult = 0;
+        SnowMobileRental instance = new SnowMobileRental (true, 6.2, 25, 7, "A1");
+        int expResult = 7;
         int result = instance.getCapacity();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        
+    } // end testLateCharge
 
     /**
      * Test of setCapacity method, of class SnowMobileRental.
@@ -62,7 +58,7 @@ public class SnowMobileRentalTest {
         instance.setCapacity(capacity);
         assertEquals(capacity, instance.getCapacity());
         
-    }
+    } // end test1SetCapacity
     
     @Test (expected = IllegalArgumentException.class)
     public void test2SetCapacity() {
@@ -72,7 +68,7 @@ public class SnowMobileRentalTest {
         instance.setCapacity(capacity);
         assertEquals(capacity, instance.getCapacity());
         
-    }
+    }// end test2SetCapacity
 
     /**
      * Test of getVin method, of class SnowMobileRental.
@@ -80,13 +76,12 @@ public class SnowMobileRentalTest {
     @Test
     public void testGetVin() {
         System.out.println("getVin");
-        SnowMobileRental instance = null;
-        String expResult = "";
+        SnowMobileRental instance = new SnowMobileRental (true, 1.2, 234, 1, "a1");
+        String expResult = "a1";
         String result = instance.getVin();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        
+    } // end testGetVin
 
     /**
      * Test of setVin method, of class SnowMobileRental.
@@ -95,11 +90,11 @@ public class SnowMobileRentalTest {
     public void testSetVin() {
         System.out.println("setVin");
         String vin = "";
-        SnowMobileRental instance = null;
+        SnowMobileRental instance = new SnowMobileRental (true, 1.2, 234, 1, "a1");
         instance.setVin(vin);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        assertEquals(vin, instance.getVin());
+        
+    } // testSetVin
 
     /**
      * Test of toString method, of class SnowMobileRental.
@@ -107,12 +102,11 @@ public class SnowMobileRentalTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        SnowMobileRental instance = null;
-        String expResult = "";
+        SnowMobileRental instance = new SnowMobileRental (true, 1.2, 234, 1, "a1");
+        String expResult = "234, $ 1.2, capacity 1 is a new model: true, vin: a1";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+       
+    }// end testToString
     
-}
+} //end test snow mobile
